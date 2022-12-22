@@ -25,33 +25,33 @@ public class MainClass
         int hourEND = Convert.ToInt32(FINISH[0]);
         int minuteEND = Convert.ToInt32(FINISH[1]);
         int hits = 0;
-        while(hour != hourEND || minute != minuteEND)
+        while (hour != hourEND || minute != minuteEND)
         {
-            if(minute == 0)
+            if (minute == 0)
             {
-                if(hour == 0 || hour == 24)
+                if (hour == 0)
                 {
                     hits = hits + 12;
                 }
-                if(hour > 0 && hour <= 12)
+                if (hour > 0 && hour <= 12)
                 {
                     hits = hits + hour;
                 }
-                if(hour > 12 && hour < 24)
+                if (hour > 12 && hour < 24)
                 {
                     hits = hits + (hour - 12);
                 }
             }
-            if(minute == 30)
+            if (minute == 30)
             {
                 hits += 1;
             }
-            
+
             minute++;
 
-            if(minute == 60)
+            if (minute == 60)
             {
-                if(hour == 23)
+                if (hour == 23)
                 {
                     hour = 0;
                     minute = 0;
@@ -62,7 +62,7 @@ public class MainClass
                     minute = 0;
                 }
             }
-            
+
 
 
         }
